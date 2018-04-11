@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Bootstrap Styles  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+  <!-- Custom Font -->
+  <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="main.css">
+  <link rel="shortcut icon" href="coffeeicons/favicon.ico" type = "image/png">
+  <title>Coffee Run</title>
+</head>
+
+<body class="container bg-light">
+  <header class="title">
+    <header class="main-header">
+          <h1>CoffeeRun</h1>
+    </header>
+  </header>
+  <section>
+    <div class="card">
+      <div class="card-body">
+        <form data-coffee-order="form" method="post">
+
+          <!-- UI input field to get coffee order from customer -->
+          <div class="form-group">
+            <label for="coffeeOrder">Coffee Order</label>
+            <input type="text" name="coffee" class="form-control" id="coffeeOrder" value="" required autofocus pattern="[a-zA-Z\s]+">
+          </div>
+
+          <!-- Toggle for To-Go order -->
+          <div class="radio togo">
+            <label>
+                    <input type="radio" name="togo" id="togo" value="togo">
+                    To-Go
+                    <img src="/coffeeicons/coffee-cup.png" alt="">
+                  </label>
+          </div>
+          <div class="radio togo">
+            <label>
+                      <input type="radio" name="togo" id="dine-in" value="dine-in" checked>
+                      Dine-In
+                      <i class="fas fa-coffee"></i>
+                    </label>
+          </div>
+
+
+          <!-- UI to get email from customer -->
+          <div class="form-group">
+            <label for="emailInput">Email</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="far fa-envelope fa-lg"></i></span>
+              </div>
+              <input type="email" name="emailAddress" class="form-control" id="emailInput" value="" placeholder="james@bond.com"  required autocomplete="email">
+            </div>
+          </div>
+
+          <!-- Buttons for size of drink -->
+          <div class="radio">
+            <label>
+                <input type="radio" name="size" value="short">
+                Short
+              </label>
+          </div>
+          <div class="radio">
+            <label>
+                <input type="radio" name="size" value="tall" checked>
+                Tall
+              </label>
+          </div>
+          <div class="radio">
+            <label>
+                <input type="radio" name="size" value="grande">
+                Grande
+              </label>
+            <div class="radio">
+              <label>
+                  <input type="radio" name="size" value="coffee-zilla">
+                  Coffee-Zilla
+                </label>
+            </div>
+          </div>
+
+          <!-- Drop down menu to add a flavor shot -->
+          <div class="form-group">
+            <label for="flavorShot">Flavor Shot</label>
+            <select id="flavorShot" class="form-control" name="flavor">
+                <option value="">None</option>
+                <option value="caramel">Caramel</option>
+                <option value="almond">Almond</option>
+                <option value="mocha">Mocha</option>
+              </select>
+          </div>
+          <div class="form-group">
+            <label for="strength">Caffeine Rating</label>
+            <img src="/coffeeicons/hot-drink-mug.png" class="mug-img" alt="">
+
+            <!--Custom Slider component -->
+            <div class="slideContainer">
+              <input name="strength" type="range" min="1" max="255" value="30" class="slider" id="strengthLevel">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="reset" class="btn btn-danger">Reset</button>
+
+          <!-- Custom Achievement Modal -->
+          <div class="modal fade" id="achievementModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalTitle">You Unlocked an Achievement!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                  Congratulations! You are like the coffee you drink, with amazing intensity and commitment to excellent flavor! Enter your email to unlock you achievement!
+
+                  <!-- Achievement Name Input -->
+                  <div class="form-group">
+                    <label for="nameModal">Enter Your Name:</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text modal-icon"><i class="fas fa-gift fa-lg"></i></span>
+                      </div>
+                      <input type="text" name="nameModal" class="form-control" id="emailInputModal" value="" placeholder="Dr. Evil">
+                    </div>
+
+                    <!-- Buttons for Achievement -->
+                    <div class="secretFormHide">
+                      <div class="radioModal">
+                        <label>
+                              <input type="radio" name="achievement" value="time-travel">
+                              Time Travel
+                            </label>
+                      </div>
+                      <div class="radioModal">
+                        <label>
+                              <input type="radio" name="achievement" value="mind-reading" checked>
+                              Mind-Reading
+                            </label>
+                      </div>
+                      <div class="radioModal">
+                        <label>
+                              <input type="radio" name="achievement" value="flawless-code">
+                              Flawless Code
+                            </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" data-dismiss="modal">Unlock Achievement</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+      <div class="card">
+        <div class="card-body">
+          <h4>Pending Orders:</h4>
+          <div data-coffee-order="checklist" class="checklist">
+          </div>
+        </div>
+      </div>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" charset="utf-8"></script>
+  <script src="/scripts/remotedatastore.js" charset="utf-8"></script>
+  <script src="/scripts/validation.js" charset="utf-8"></script>
+  <script src="/scripts/checklist.js" charset="utf-8"></script>
+  <script src="/scripts/formhandler.js" charset="utf-8"></script>
+  <script src="/scripts/datastore.js" charset="utf-8"></script>
+  <script src="/scripts/truck.js" charset="utf-8"></script>
+  <script src="/scripts/main.js" charset="utf-8"></script>
+</body>
+
+</html>

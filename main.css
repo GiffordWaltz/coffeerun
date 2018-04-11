@@ -1,0 +1,100 @@
+/*Reference page 61 to see an example of how to do this*/
+/* @font-face{
+  font-family: 'coffeefont';
+  src: url('fonts/LAKESHOR-webfont.eot');
+  src:  url('fonts/LAKESHOR-webfont.eot?#iefix') format('embedded-opentype'),
+        url('fonts/LAKESHOR-webfont.woff') format('woff'),
+        url('fonts/LAKESHOR-webfont.ttf') format('truetype'),
+        url('fonts/LAKESHOR-webfont.svg#lakeshore') format('svg');
+  font-weight: normal;
+  font-style: normal;
+} */
+header.title{
+font-family: 'Lobster Two', cursive;
+text-shadow: 4px 4px 5px #aaa;
+color: rgba(185, 97, 33, 0.87)
+}
+
+form label{
+  font-family: 'Lobster Two', cursive;
+}
+
+div.togo{
+  display: inline-block;
+}
+
+.mug-img{
+  margin-bottom: 5px;
+}
+
+.slideContainer{
+  width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 70%;
+    height: 14px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.fa-envelope{
+  color: red;
+}
+
+.btn-primary{
+  background-color: rgb(23, 142, 5);
+}
+
+.btn-primary:hover{
+  /* //Add darken attribute */
+  background-color: green;
+}
+
+.radioModal{
+  display: none;
+  margin: 5px;
+}
+
+.card{
+  margin-top: 10px;
+}
+
+.main-header{
+  text-align: center;
+}
+
+form :focus:required:invalid {
+  border-color: #fa3733;
+}
+
+.checklist{
+  font-family: sans-serif;
+}
+
+.modal-icon{
+  color: #007bff;
+}
